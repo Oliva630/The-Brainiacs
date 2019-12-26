@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="https://igv.org/web/img/favicon.ico">
+
+    <title>APG Genome Browser</title>
+
+    <!-- IGV JS-->
+    <script type="application/javascript" src="./igv.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="myDiv" style="padding-top: 50px;padding-bottom: 20px; height: auto">
+    <h1>Genome browser to demonstrate the sequence in APG</h1>
+</div>
+
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        var div = document.getElementById("myDiv");
+	var apg= {
+	"id": "APG",
+    "name": "African pan-genome",
+    "fastaURL": "http://106.15.45.44:8000/static/igv/PDBU01.1.fa",
+	"indexURL": "http://106.15.45.44:8000/static/igv/PDBU01.1.fa.fai",
+	}
+        igv.createBrowser(div, 
+			{
+			genome: apg
+			})
+                .then(function (browser) {
+                    console.log("Browser ready");
+                })
+
+
+    })
+
+
+</script>
+
+</body>
+
+</html>

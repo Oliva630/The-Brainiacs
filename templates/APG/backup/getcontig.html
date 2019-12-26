@@ -1,0 +1,229 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+        <title>APG</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <!-- Menu CSS -->
+        <link href="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css' %}"rel="stylesheet">
+        <!-- animation CSS -->
+        <link href="{% static 'css/animate.css' %}"rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="{% static 'css/style.css' %}"rel="stylesheet">
+        <!-- color CSS -->
+        <link href="{% static 'css/colors/default.css' %}" id = "theme" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-select/css/bootstrap-select.min.css' %}">
+		<link rel="stylesheet" href="{% static 'bootstrap-table/bootstrap-table.min.css' %}">
+	</head>
+    <body class="fix-header">
+        <!-- ============================================================== -->
+        <!-- Preloader -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+            </svg>
+        </div>
+        <div id="wrapper">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+            <nav class="navbar navbar-default navbar-static-top m-b-0">
+                <div class="navbar-header">
+                    <div class="top-left-part">
+                        <!-- Logo -->
+                        <a class="logo" href="{% url 'search'%}">
+                            <!-- Logo icon image, you can use font-icon also --><b>
+                            <!--This is dark logo icon--><img src="{% static 'plugins/images/admin-logo.png' %}"alt="home"
+                            class="dark-logo" />
+                            <!--This is light logo icon--><img src="{% static 'plugins/images/admin-logo-dark.png' %}"alt="home"
+                            class="light-logo" />
+                            </b>
+                            <!-- Logo text image you can use text also --><span class="hidden-xs">
+                            <!--This is dark logo text--><img src="{% static 'plugins/images/admin-text.png' %}"alt="home"
+                            class="dark-logo" />
+                            <!--This is light logo text--><img src="{% static 'plugins/images/admin-text-dark.png' %}"alt="home"
+                            class="light-logo" />
+                        </span> </a>
+                    </div>
+                    <!-- /Logo -->
+                    <ul class="nav navbar-top-links navbar-right pull-right">
+                        <li>
+                            <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg"
+                            href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.navbar-header -->
+                <!-- /.navbar-top-links -->
+                <!-- /.navbar-static-side -->
+            </nav>
+            <!-- End Top Navigation -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav slimscrollsidebar">
+                    <div class="sidebar-head">
+                        <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span
+                    class="hide-menu">Navigation</span></h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="{% url 'search'%}" class="waves-effect"><i
+                        aria-hidden="true"></i>Search</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'teammates'%}" class="waves-effect"><i aria-hidden="true"></i>Teammates</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Filter Conditions</h4>
+                    </div>
+                    
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /row -->
+                <div class="row">
+                   <table class="table table-striped table-bordered" style="table-layout:fixed;word-break:break-all; word-wrap:break-all;font-family: Arial">     
+                <thead>　　　　　　　　　　　　　　　　
+                    <tr>　　　　
+                        <th style="width:30%">Contig Name</th>　　　　　　　　　　
+                        <th style="width:20%">Contig Place Condition</th>
+                        <th style="width:20% ">Number Individuals</th>
+                        <th style="width:30% ">Contig Length</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><!-- <a href="../getseq/{{ item.ID }}"> -->{{ contig.contig_name }}</a></td>
+                        <td>{{ contig.contig_place_condition }}</td>
+                        <td>{{ contig.num_individuals}}</td>
+                        <td>{{ contig.contig_length }}</td>
+                        <!-- <td>{{ customer.customer_note|truncatechars:30}}</td>　　　＃｜truncatechars:30 默认在页面只显示30个字节 -->
+                    </tr>
+                </tbody>
+                </table>
+
+                <table class="table table-striped table-bordered" style="table-layout:fixed;word-break:break-all; word-wrap:break-all;font-family: Arial">     
+                <thead>　　　　　　　　　　　　　　　　
+                    <tr>　　　　
+                        <th >Sequence</th>　　　　　　　　　　
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ contig.contig_sequence}}</td>
+                    </tr>
+                </tbody>   
+                </table>
+                
+                {% if chro %}
+                <table class="table table-striped table-bordered" style="table-layout:fixed;word-break:break-all; word-wrap:break-all;font-family: Arial">     
+                <thead>　　　　　　　　　　　　　　　　
+                    <tr>　　　　
+                        <th style = "width:30%">Chromosome Name</th>
+                        <th style = "width:20%">Start</th>　
+                        <th style = "width:20%">End</th>　
+                        <th style = "width:30%">Orientation</th>　　　　　　　
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ chro.chromosome_name}}</td>
+                        <td>{{ chro.start}}</td>
+                        <td>{{ chro.end}}</td>
+                        <td>{{ chro.orientation}}</td>
+                    </tr>
+                </tbody>   
+                </table>
+                {% endif %}
+                
+                {% if scaffold %}
+                <table class="table table-striped table-bordered" style="table-layout:fixed;word-break:break-all; word-wrap:break-all;font-family: Arial">     
+                <thead>　　　　　　　　　　　　　　　　
+                    <tr>　　　　
+                        <th style = "width:30%">Align Scaffold Name</th>
+                        <th style = "width:15%">Align Start</th>　
+                        <th style = "width:15%">Align End</th>　
+                        <th style = "width:20%">Align Coverage</th>
+                        <th style = "width:20%">Align Identity</th>　　　　　
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in scaffold %}
+                    <tr>
+                        <td>{{ i.align_scaffold_name }}</td>
+                        <td>{{ i.align_start }}</td>
+                        <td>{{ i.align_end }}</td>
+                        <td>{{ i.align_coverage}}</td>
+                        <td>{{ i.align_identity}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>   
+                </table>
+                {% endif %}
+
+                {% if gene %}
+                <table class="table table-striped table-bordered" style="table-layout:fixed;word-break:break-all; word-wrap:break-all;font-family: Arial">     
+                <thead>　　　　　　　　　　　　　　　　
+                    <tr>　　　　
+                        <th style = "width:30%">Gene Name</th>
+                        <th style = "width:15%">Gene Type</th>
+                        <th style = "width:15%">Entrez ID</th>　　
+                        <th style = "width:40%">NCBI URL</th>　　　　　
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in gene %}
+                    <tr>
+                        <td>{{ i.gene_name }}</td>
+                        <td>{{ i.gene_type }}</td>
+                        <td>{{ i.entrez_id }}</td>
+                        <td><a href = {{ i.ncbi_url }} >{{ i.ncbi_url}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>   
+                </table>
+                {% endif %}
+
+
+                </div>
+                <!-- /.container-fluid -->
+                <footer class="footer text-center"> 2019 &copy; African Pan-Genome Database by SJTU </a> </footer>
+            </div>
+                <!-- /#page-wrapper -->
+            </div>
+            <!-- /#wrapper -->
+            <!-- jQuery -->
+            <script src="{% static 'plugins/bower_components/jquery/dist/jquery.min.js' %}"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+            <!-- Menu Plugin JavaScript -->
+            <script src="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js' %}"></script>
+            <!--slimscroll JavaScript -->
+            <script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+            <!-- Custom Theme JavaScript -->
+            <script src="{% static 'js/custom.min.js' %}"></script>
+            <script src="{% static 'bootstrap/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+        </body>
+    </html>

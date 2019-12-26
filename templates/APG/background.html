@@ -1,0 +1,180 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+        <title>APG</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <!-- Menu CSS -->
+        <link href="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css' %}"rel="stylesheet">
+        <!-- animation CSS -->
+        <link href="{% static 'css/animate.css' %}"rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="{% static 'css/style.css' %}"rel="stylesheet">
+        <!-- color CSS -->
+        <link href="{% static 'css/colors/default.css' %}" id = "theme" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-select/css/bootstrap-select.min.css' %}">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if    you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="fix-header">
+        <!-- ============================================================== -->
+        <!-- Preloader -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+            </svg>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Wrapper -->
+        <!-- ============================================================== -->
+        <div id="wrapper">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+            <nav class="navbar navbar-default navbar-static-top m-b-0">
+                <div class="navbar-header">
+                    <div class="top-left-part">
+                        <!-- Logo -->
+                        <a class="logo" href="{% url 'search'%}">
+                            <!-- Logo icon image, you can use font-icon also --><b>
+                            <!--This is dark logo icon--><img src="{% static 'plugins/images/admin-logo.png' %}"alt="home"
+                            class="dark-logo" />
+                            <!--This is light logo icon--><img src="{% static 'plugins/images/admin-logo-dark.png' %}"alt="home"
+                            class="light-logo" />
+                            </b>
+                            <!-- Logo text image you can use text also --><span class="hidden-xs">
+                            <!--This is dark logo text--><img src="{% static 'plugins/images/admin-text.png' %}"alt="home"
+                            class="dark-logo" />
+                            <!--This is light logo text--><img src="{% static 'plugins/images/admin-text-dark.png' %}"alt="home"
+                            class="light-logo" />
+                        </span> </a>
+                    </div>
+                    <!-- /Logo -->
+                    <ul class="nav navbar-top-links navbar-right pull-right">
+                        <li>
+                            <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg"
+                            href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.navbar-header -->
+                <!-- /.navbar-top-links -->
+                <!-- /.navbar-static-side -->
+            </nav>
+            <!-- End Top Navigation -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav slimscrollsidebar">
+                    <div class="sidebar-head">
+                        <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span
+                    class="hide-menu">Navigation</span></h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="{% url 'search'%}" class="waves-effect"><i
+                        aria-hidden="true"></i>Search</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'teammates'%}" class="waves-effect"><i aria-hidden="true"></i>Teammates</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'background'%}" class="waves-effect"><i aria-hidden="true"></i>Background</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'visualization'%}" class="waves-effect"><i aria-hidden="true"></i>Visualization</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Background</h4>
+                    </div>
+                    
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /row -->
+                <div class="row">
+                    <div class="well" style="width: 80%;margin-left: 10%">
+                    <p style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;It is well known that after the completion of the human genome project, a database of human reference genome sequences based on a limited number of individuals was created, which is also the reference basis for many subsequent experiments in molecular biology. However, as the sequencing of human genome research extensively developed, and the sequencing of the rising number of individuals, the scientists found that the existing reference human genome sequences is still incomplete, especially in some specific people or individual genome sequencing reference to the existing human genome sequence of the missing pieces, that is, the human genome sequence is actually more complex than a known reference genome sequences, there are a lot of unknown sequences (or dark matter) to be scientists by continually deepening the research to find them. </p>
+                    </div>
+                    <div class="well" style="width: 80%;margin-left: 10%">
+                    <p style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;Launched on January 22, 2008, the international thousand-genome project has sequenced a total of 1,200 people. The ultimate goal is to complete the genome-wide data of 2,500 people, using 4 such huge amounts of data to more accurately locate the discovered genetic risk factors and dig out more unknown pathogenic genetic factors, so as to benefit human health. The people to be sequenced in the project include: Yoruba people in the Ibadan region of Nigeria; Japanese living in Tokyo; Chinese living in Beijing; Of northern and western European descent from Utah; Luhya in Webuye, Kenya, and Maasai in Kinyawa; Residents of Toscani, Italy; Gujarati Indians living in Houston; Chinese living in Denver; Mexican descent living in Los Angeles; Of African descent inhabiting the southwestern United States. </p>
+                    </div>
+                    <div class="well" style="width: 80%;margin-left: 10%">
+                    <p style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;The findings of the 1000 Genome Project showed how different people are. The study identified more than 10 million gene variants, large and small, about 8 million of which were previously unknown. For gene variants carried by more than 1% of the population, the coverage rate of this study reached more than 95%. This result has high application value in medicine and other fields, for example, by referring to the map, it can be easy to find the gene variants causing disease. In addition, the researchers demonstrated the feasibility of using a combination of genetic sequencing techniques in large gene studies.  </p>
+                    </div>
+                    <div class="well" style="width: 80%;margin-left: 10%">
+                    <p style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;Since the cost of gene sequencing is still very high, the cost of gene sequencing research could be greatly reduced if some gene sequences could be "precisely" tested while others could be "roughly" tested to ensure the accuracy of the final results. The researchers developed several analytical and computational techniques to overcome the obstacles to studying multiple copies of genes. Using the new method, the researchers accurately estimated the copy number of 1,900 base pairs of DNA fragments, which ranged from 0 to 48. The full human genome study, first conducted in 2010, analyzed only two representative genomes from Africa and Asia. In this study, approximately 5 Mb of new sequences not present in the reference genome (hg19) were detected in each individual, and the total missing sequences in the reference genome were estimated at 19-40 Mb. In subsequent studies, a reanalysis of the 5 Mb unique sequence in the Chinese population showed that the 3.7 Mb sequence could be compared with the reference genome of the GRCh385 people. But in another Chinese genome, HX1, a total of 12.8 Mb of sequences were not detected in GRCh38, while 68 percent of these new sequences were found in the Asian population. An African pan-genome is reported. It contains about 300 Mb of unique sequences missing from the human reference genome. It is worth noting that most of these new sequences are individual specific and show only 81 Mb of common unique sequences in two or more individuals. These studies show the importance of genomic diversity in specific populations. These regions of the non-reference genome may be the driving gene mutations for certain diseases, especially those specific to certain ethnic groups, that deserve our study. Sherman et al. used a deep sequencing dataset of 910 African descendants to construct a sequence of DNA that existed in these individuals but was missing from the reference human genome. A total of 1.19 trillion reads from 910 individuals were compared to the reference genome (GRCh38), and all unmatched reads were collected and assembled into continuous sequences (contigs).Then all the overlap groups were compared with each other, and 302 distinct contigs were found that were not included in the reference genome at present. These sequences represented the missing African pan-genome regions in the reference genome. </p>
+                    </div>
+                        </div>
+                        <!-- /.container-fluid -->
+                    <footer class="footer text-center"> 2019 &copy; African Pan-Genome Database by SJTU </a> </footer>
+                </div>
+                <!-- /#page-wrapper -->
+            </div>
+            <!-- /#wrapper -->
+            <!-- jQuery -->
+            <script src="{% static 'plugins/bower_components/jquery/dist/jquery.min.js' %}"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+            <!-- Menu Plugin JavaScript -->
+            <script src="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js' %}"></script>
+            <!--slimscroll JavaScript -->
+            <script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+            <!-- Custom Theme JavaScript -->
+            <script src="{% static 'js/custom.min.js' %}"></script>
+            <script src="{% static 'bootstrap/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+        </body>
+			<script src="/static/live2d/L2Dwidget.min.js"></script>
+			<script type="text/javascript">
+	setTimeout(() => {
+			L2Dwidget.init({
+			      model: {
+				            jsonPath: "/static/live2d/tororo/assets/tororo.model.json",
+				          },
+			      display: {
+				            superSample: 2,
+				            width: 100,
+				            height: 100,
+				            position: 'left',
+				            hOffset: 0,
+				            vOffset: 0,
+				          },
+			      mobile: {
+				            show: true,
+				            scale: 1,
+				            motion: true,
+				          },
+			      react: {
+				            opacityDefault: 0.8,
+				            opacityOnHover: 0.2,
+				          }
+					    });
+				},1000)
+			</script>
+    </html>

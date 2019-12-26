@@ -1,0 +1,281 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Teammates</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}"rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css' %}"rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="{% static 'css/animate.css' %}"rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}"rel="stylesheet">
+    <!-- color CSS -->
+    <link href="{% static 'css/colors/default.css' %}" id = "theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo" href="{% url 'search'%}">
+                        <!-- Logo icon image, you can use font-icon also --><b>
+                            <!--This is dark logo icon--><img src="{% static 'plugins/images/admin-logo.png' %}"alt="home"
+                                class="dark-logo" />
+                            <!--This is light logo icon--><img src="{% static 'plugins/images/admin-logo-dark.png' %}"alt="home"
+                                class="light-logo" />
+                        </b>
+                        <!-- Logo text image you can use text also --><span class="hidden-xs">
+                            <!--This is dark logo text--><img src="{% static 'plugins/images/admin-text.png' %}"alt="home"
+                                class="dark-logo" />
+                            <!--This is light logo text--><img src="{% static 'plugins/images/admin-text-dark.png' %}"alt="home"
+                                class="light-logo" />
+                        </span> </a>
+                </div>
+                <!-- /Logo -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg"
+                            href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+                    </li>
+                   
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span
+                            class="hide-menu">Navigation</span></h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="{% url 'search'%}" class="waves-effect"><i
+                        aria-hidden="true"></i>Search</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'teammates'%}" class="waves-effect"><i aria-hidden="true"></i>Teammates</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'background'%}" class="waves-effect"><i aria-hidden="true"></i>Background</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'visualization'%}" class="waves-effect"><i aria-hidden="true"></i>Visualization</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">GROUP&nbsp; &nbsp;MEMBERS</h4>
+                    </div>
+                    
+                </div>
+                <!-- /.row -->
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 col-md-offset-2">
+                        <div class="white-box">
+                            <div class="user-bg"> <img width="100%" alt="user" src="{% static 'plugins/images/large/img1.jpg' %}">
+                                <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="{% static 'plugins/images/users/zc.jpg' %}" 
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white">朱宸&nbsp;</h4>
+                                        <h5 class="text-white">451238635@sjtu.edu.cn</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-btm-box">
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-purple"><i class="ti-facebook"></i></p>
+                                  <h1>9</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-blue"><i class="ti-twitter"></i></p>
+                                  <h1>&nbsp;8</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-danger"><i class="ti-dribbble"></i></p>
+                                  <h1>5</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="white-box">
+                            <div class="user-bg"> <img width="100%" alt="user" src="{% static 'plugins/images/large/img1.jpg' %}">
+                              <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="{% static 'plugins/images/users/zym.jpg' %}" 
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white">张昱朦</h4>
+                                        <h5 class="text-white">zhangyumeng_sjtu@163.com</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-btm-box">
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-purple"><i class="ti-facebook"></i></p>
+                                  <h1>9&nbsp;</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-blue"><i class="ti-twitter"></i></p>
+                                  <h1>&nbsp;9</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-danger"><i class="ti-dribbble"></i></p>
+                                  <h1>6&nbsp;</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-md-4 col-xs-12 col-md-offset-2">
+                        <div class="white-box">
+                            <div class="user-bg"> <img width="100%" alt="user" src="{% static 'plugins/images/large/img1.jpg' %}">
+                                <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="{% static 'plugins/images/users/zbq.jpg' %}" 
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white">曾贝琴&nbsp;</h4>
+                                        <h5 class="text-white">zengbeiqin@sjtu.edu.cn</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-btm-box">
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-purple"><i class="ti-facebook"></i></p>
+                                  <h1>2&nbsp;</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-blue"><i class="ti-twitter"></i></p>
+                                  <h1>&nbsp;5</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-danger"><i class="ti-dribbble"></i></p>
+                                  <h1>1&nbsp;</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-md-4 col-xs-12">
+                        <div class="white-box">
+                            <div class="user-bg"> <img width="100%" alt="user" src="{% static 'plugins/images/large/img1.jpg' %}">
+                                <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="{% static 'plugins/images/users/5.jpg' %}" 
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white">李唯一</h4>
+                                        <h5 class="text-white">oliva630@sjtu.edu.cn</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-btm-box">
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-purple"><i class="ti-facebook"></i></p>
+                                  <h1>4&nbsp;</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-blue"><i class="ti-twitter"></i></p>
+                                  <h1>&nbsp;0</h1>
+                                </div>
+                              <div class="col-md-4 col-sm-4 text-center">
+                                <p class="text-danger"><i class="ti-dribbble"></i></p>
+                                  <h1>4&nbsp;</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2019 &copy; African Pan-Genome Database by SJTU </a> </footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="{% static 'plugins/bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js' %}"></script>
+    <!--slimscroll JavaScript -->
+    <script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'js/custom.min.js' %}"></script>
+</body>
+			<script src="/static/live2d/L2Dwidget.min.js"></script>
+			<script type="text/javascript">
+	setTimeout(() => {
+			L2Dwidget.init({
+			      model: {
+				            jsonPath: "/static/live2d/tororo/assets/tororo.model.json",
+				          },
+			      display: {
+				            superSample: 2,
+				            width: 100,
+				            height: 100,
+				            position: 'left',
+				            hOffset: 0,
+				            vOffset: 0,
+				          },
+			      mobile: {
+				            show: true,
+				            scale: 1,
+				            motion: true,
+				          },
+			      react: {
+				            opacityDefault: 0.8,
+				            opacityOnHover: 0.2,
+				          }
+					    });
+				},1000)
+			</script>
+</html>

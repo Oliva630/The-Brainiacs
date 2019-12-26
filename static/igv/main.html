@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="https://igv.org/web/img/favicon.ico">
+
+    <title>APG Genome Browser</title>
+
+    <!-- IGV JS-->
+    <script type="application/javascript" src="./igv.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="myDiv" style="padding-top: 50px;padding-bottom: 20px; height: auto">
+    <h1>Genome browser to demonstrate the sequence in APG</h1>
+</div>
+
+<!-- <script type="text/javascript">
+    var igvDiv = document.getElementById("myDiv");
+      var options =
+        {
+            genome: "hg38",
+            locus: "chr8:127,736,588-127,739,371",
+            tracks: [
+                {
+                    "name": "HG00103",
+                    "url": "https://s3.amazonaws.com/1000genomes/data/HG00103/alignment/HG00103.alt_bwamem_GRCh38DH.20150718.GBR.low_coverage.cram",
+                    "indexURL": "https://s3.amazonaws.com/1000genomes/data/HG00103/alignment/HG00103.alt_bwamem_GRCh38DH.20150718.GBR.low_coverage.cram.crai",
+                    "format": "cram"
+                }
+            ]
+        };
+
+        igv.createBrowser(igvDiv, options)
+                .then(function (browser) {
+                    console.log("Created IGV browser");
+                })
+</script> -->
+
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        var div = document.getElementById("myDiv");
+
+        igv.createBrowser(div, {
+                    genome: "hg19",
+                    locus: '22:16052542',
+                    tracks: [{
+                      type: 'alignment',
+                      format: 'fasta',
+                      //url: 'https://data.broadinstitute.org/igvdata/1KG/b37/data/HG02450/alignment/HG02450.mapped.ILLUMINA.bwa.ACB.low_coverage.20120522.bam',
+                      //name: 'HG02450'
+                      url:'./PDBU01.1.fa',
+                      indexURL:'./PDBU01.1.fa.fai',
+                      // name:'chr22'         
+                    }]
+                    // queryParametersSupported: true,
+                    // promisified: true
+                })
+                .then(function (browser) {
+                    console.log("Browser ready");
+                })
+
+
+    })
+
+
+</script>
+
+</body>
+
+</html>
